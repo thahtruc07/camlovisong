@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cấm quay lại với người yêu cũ</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1020; --accent:#ff6b6b; --muted:#9aa4b2; --glass: rgba(255,255,255,0.04);
+      --good:#6ee7b7;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,107,107,0.06), transparent),
+                  radial-gradient(900px 400px at 90% 90%, rgba(110,231,183,0.03), transparent),
+                  var(--bg);
+      color:#e6eef6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+    }
+    .container{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .logo{display:flex;gap:12px;align-items:center}
+    .logo .badge{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ffa94d);display:flex;align-items:center;justify-content:center;font-weight:700;color:#091220}
+    h1{margin:0;font-size:20px}
+    p.lead{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr;}}
+
+    .card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));padding:20px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.5);}
+
+    .hero{display:flex;gap:16px;align-items:center}
+    .hero .title{font-size:28px;font-weight:700;line-height:1.05}
+    .banner{margin-top:12px;padding:14px;border-radius:12px;background:linear-gradient(90deg,rgba(255,107,107,0.12),rgba(255,169,77,0.06));color:var(--accent);font-weight:700;text-align:center}
+
+    ul.reasons{padding-left:18px;margin-top:12px;color:#dbeafe}
+    ul.reasons li{margin:10px 0}
+
+    .pledge{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:var(--accent);color:#081021;font-weight:700;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--good)}
+
+    .sidebar .stat{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+    .stat .num{background:var(--glass);padding:10px;border-radius:10px;min-width:56px;text-align:center;font-weight:700}
+    .small{font-size:13px;color:var(--muted)}
+
+    .tips{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+    @media (max-width:480px){.tips{grid-template-columns:1fr}}
+    .tip{padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)}
+
+    .script{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);font-family:monospace;font-size:14px;color:#cdeffc}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Confetti hearts */
+    canvas#confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:999}
+
+    .done{display:inline-block;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,var(--good),#2dd4bf);color:#052018;font-weight:800}
+  </style>
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="badge">🚫</div>
+        <div>
+          <h1>Cấm quay lại với người yêu cũ</h1>
+          <p class="lead">Một trang nhỏ để nhắc nhở bạn mạnh mẽ, nhẹ nhàng: đừng quay lại nếu nó không còn tốt.</p>
+        </div>
+      </div>
+      <div class="small">Made with ♥ — Quyết tâm nhé!</div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <div class="hero">
+            <div style="flex:1">
+              <div class="title">CẤM QUAY LẠI — vì trái tim bạn xứng đáng hơn</div>
+              <div class="banner">Quyết tâm hôm nay = hạnh phúc ngày mai</div>
+            </div>
+            <div style="width:120px;text-align:center">
+              <div style="font-size:32px;font-weight:800;color:var(--accent)">NO</div>
+              <div class="small">Nói một lần thôi</div>
+            </div>
+          </div>
+
+          <h3 style="margin-top:16px">Tại sao không nên quay lại?</h3>
+          <ul class="reasons">
+            <li><strong>Vì lịch sử lặp lại:</strong> những vấn đề cốt lõi chưa thay đổi thì sẽ lại xuất hiện.</li>
+            <li><strong>Vì giá trị của bạn:</strong> bạn xứng đáng với người trân trọng và phát triển cùng bạn.</li>
+            <li><strong>Vì thời gian:</strong> thời gian để chữa lành không nên bị lấp bởi những lần quay trở lại đau lòng.</li>
+            <li><strong>Vì sự trưởng thành:</strong> giữ khoảng cách để bạn có thể học và tiến lên.</li>
+          </ul>
+
+          <div class="pledge">
+            <div class="small">Lời thề (click để cam kết):</div>
+            <div>
+              <button id="pledgeBtn" class="btn">Tôi cam kết: Không quay lại!</button>
+              <button id="resetBtn" class="btn secondary">Hủy cam kết</button>
+            </div>
+            <div id="pledgeMsg" style="margin-top:8px"></div>
+          </div>
+
+          <h3 style="margin-top:18px">Kịch bản trả lời (khi họ liên hệ)</h3>
+          <div class="script">"Cảm ơn vì đã nhắn. Mình đã suy nghĩ kỹ và quyết định không nối lại. Chúc bạn mọi điều tốt đẹp."</div>
+
+          <h3 style="margin-top:16px">Lập kế hoạch chăm sóc bản thân</h3>
+          <div class="tips">
+            <div class="tip"><strong>1.</strong> Hẹn lịch với bạn bè/hoạt động mỗi tuần.</div>
+            <div class="tip"><strong>2.</strong> Thử một sở thích mới: vẽ, thể thao, nấu ăn.</div>
+            <div class="tip"><strong>3.</strong> Viết nhật ký: mỗi ngày 3 điều biết ơn.</div>
+            <div class="tip"><strong>4.</strong> Nếu cần, tìm trợ giúp chuyên môn (tâm lý).</div>
+          </div>
+
+        </section>
+
+        <footer class="card" style="margin-top:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+            <div class="small">Bạn có thể in lời thề này hoặc chia sẻ để nhắc mình mỗi khi yếu lòng.</div>
+            <div>
+              <button id="printBtn" class="btn secondary">In/Save</button>
+              <button id="shareBtn" class="btn">Sao chép lời thề</button>
+            </div>
+          </div>
+        </footer>
+      </main>
+
+      <aside class="sidebar">
+        <div class="card">
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <div>
+              <div style="font-size:14px;color:var(--muted)">Ngày bắt đầu quyết tâm</div>
+              <div id="startDate" style="font-weight:800;margin-top:6px">— chưa cam kết —</div>
+            </div>
+            <div style="text-align:right">
+              <div class="small">Mốc tiến bộ</div>
+              <div class="num done" id="daysCount">0</div>
+              <div class="small">ngày giữ vững</div>
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+          <div class="small">Mẹo nhanh</div>
+          <div style="margin-top:8px">Khi nhớ, hít 4-4-4: hít 4 giây - giữ 4 - thở ra 4. Sau đó làm việc khác ngay.</div>
+
+          <div style="margin-top:12px">
+            <div class="small">Trò chơi nhỏ</div>
+            <div style="margin-top:8px">Mỗi lần bạn bấm "Tôi cam kết", hệ thống sẽ chúc mừng và tăng số ngày (mô phỏng).</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 style="margin:0 0 8px 0">Cần nói gì với bạn thân?</h4>
+          <div class="small">Gửi cho một người bạn tin tưởng để họ giúp bạn giữ vững:</div>
+          <div class="script" style="margin-top:8px">"Mình đang giữ quyết tâm không quay lại. Nếu mình yếu, nhắc mình nhé."</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    const pledgeBtn = document.getElementById('pledgeBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const pledgeMsg = document.getElementById('pledgeMsg');
+    const startDate = document.getElementById('startDate');
+    const daysCount = document.getElementById('daysCount');
+    const shareBtn = document.getElementById('shareBtn');
+    const printBtn = document.getElementById('printBtn');
+
+    function updateDays(from) {
+      if(!from) { daysCount.textContent = '0'; return }
+      const now = new Date();
+      const diff = Math.floor((now - new Date(from)) / (1000*60*60*24));
+      daysCount.textContent = diff.toString();
+    }
+
+    pledgeBtn.addEventListener('click', () => {
+      const today = new Date().toISOString();
+      localStorage.setItem('pledgeDate', today);
+      startDate.textContent = new Date(today).toLocaleDateString();
+      pledgeMsg.innerHTML = '<strong style="color:var(--good)">Đã cam kết!</strong> Hãy tự hào về quyết định của bạn.';
+      triggerConfetti();
+      updateDays(today);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      localStorage.removeItem('pledgeDate');
+      startDate.textContent = '— chưa cam kết —';
+      pledgeMsg.textContent = 'Đã hủy cam kết.';
+      updateDays(null);
+    });
+
+    shareBtn.addEventListener('click', ()=>{
+      const text = 'Mình đã cam kết: Không quay lại với người yêu cũ. Giữ vững nhé!';
+      navigator.clipboard?.writeText(text).then(()=>{
+        alert('Đã sao chép lời thề vào clipboard. Hãy chia sẻ với người bạn tin tưởng.');
+      }).catch(()=>{alert('Không thể sao chép tự động. Hãy chọn và sao chép thủ công.');})
+    });
+
+    printBtn.addEventListener('click', ()=>{
+      window.print();
+    });
+
+    // Load saved pledge
+    (function(){
+      const saved = localStorage.getItem('pledgeDate');
+      if(saved){
+        startDate.textContent = new Date(saved).toLocaleDateString();
+        pledgeMsg.innerHTML = '<strong style="color:var(--good)">Bạn đã cam kết trước đó.</strong>';
+        updateDays(saved);
+      }
+    })();
+
+    /* Simple confetti hearts */
+    function triggerConfetti(){
+      const canvas = document.getElementById('confetti');
+      canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+      const ctx = canvas.getContext('2d');
+      const pieces = [];
+      const colors = ['#ff6b6b','#ffd166','#6ee7b7','#84ccff'];
+      for(let i=0;i<40;i++){
+        pieces.push({x:Math.random()*canvas.width,y:-20,vy:2+Math.random()*4, vx:(Math.random()-0.5)*3, r:8+Math.random()*8, c:colors[Math.floor(Math.random()*colors.length)], rot:Math.random()*6});
+      }
+      let t=0;
+      function draw(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        for(const p of pieces){
+          p.x += p.vx; p.y += p.vy; p.vy += 0.02; p.rot += 0.05;
+          ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(Math.sin(p.rot));
+          // draw heart-ish shape
+          ctx.beginPath();
+          ctx.moveTo(0, -p.r/2);
+          ctx.bezierCurveTo(p.r, -p.r, p.r*1.2, p.r/2, 0, p.r);
+          ctx.bezierCurveTo(-p.r*1.2, p.r/2, -p.r, -p.r, 0, -p.r/2);
+          ctx.closePath();
+          ctx.fillStyle = p.c; ctx.fill();
+          ctx.restore();
+        }
+        t++; if(t<180) requestAnimationFrame(draw);
+        else ctx.clearRect(0,0,canvas.width,canvas.height);
+      }
+      draw();
+    }
+
+    // Responsive resize
+    window.addEventListener('resize', ()=>{
+      const canvas = document.getElementById('confetti');
+      canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
